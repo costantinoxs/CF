@@ -1,5 +1,9 @@
 package it.cdpaf.computerfamily;
 
+import it.cdpaf.computerfamily.fragment.AdvancedSearch;
+import it.cdpaf.computerfamily.fragment.FantaSearch;
+import it.cdpaf.computerfamily.fragment.Basket;
+
 import java.util.Locale;
 
 import android.os.Bundle;
@@ -72,11 +76,29 @@ public class MainActivity extends FragmentActivity {
 			// getItem is called to instantiate the fragment for the given page.
 			// Return a DummySectionFragment (defined as a static inner class
 			// below) with the page number as its lone argument.
-			Fragment fragment = new DummySectionFragment();
-			Bundle args = new Bundle();
-			args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, position + 1);
-			fragment.setArguments(args);
-			return fragment;
+			switch (position) {
+				case 0 :
+					Fragment fragmentFS = new FantaSearch();
+					Bundle argsFS = new Bundle();
+					argsFS.putInt(FantaSearch.ARG_SECTION_NUMBER, position + 1);
+					fragmentFS.setArguments(argsFS);
+					return fragmentFS;
+				case 1 :
+					Fragment fragmentAS = new AdvancedSearch();
+					Bundle argsAS = new Bundle();
+					argsAS.putInt(AdvancedSearch.ARG_SECTION_NUMBER, position + 1);
+					fragmentAS.setArguments(argsAS);
+					return fragmentAS;
+				case 2 :
+					Fragment fragmentB = new Basket();
+					Bundle argsB = new Bundle();
+					argsB.putInt(Basket.ARG_SECTION_NUMBER, position + 1);
+					fragmentB.setArguments(argsB);
+					return fragmentB;
+				default: 
+					return null;
+			}
+			
 		}
 
 		@Override
@@ -100,31 +122,6 @@ public class MainActivity extends FragmentActivity {
 		}
 	}
 
-	/**
-	 * A dummy fragment representing a section of the app, but that simply
-	 * displays dummy text.
-	 */
-	public static class DummySectionFragment extends Fragment {
-		/**
-		 * The fragment argument representing the section number for this
-		 * fragment.
-		 */
-		public static final String ARG_SECTION_NUMBER = "section_number";
-
-		public DummySectionFragment() {
-		}
-
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.fragment_main_dummy,
-					container, false);
-			TextView dummyTextView = (TextView) rootView
-					.findViewById(R.id.section_label);
-			dummyTextView.setText(Integer.toString(getArguments().getInt(
-					ARG_SECTION_NUMBER)));
-			return rootView;
-		}
-	}
+	
 
 }
