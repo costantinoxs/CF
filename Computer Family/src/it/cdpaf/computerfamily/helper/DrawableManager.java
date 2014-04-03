@@ -89,6 +89,7 @@ public class DrawableManager {
     	if (drawableMap.containsKey(urlString)) {
     		Log.d(ctx.getClass().getSimpleName(),"DRAWABLE MANAGER FDOT:"+ "RIUSO, Size:"+drawableMap.size());
         	imageView.setImageDrawable(drawableMap.get(urlString));
+            return;
             //product.setImmagine(drawableMap.get(urlString));
         }
 
@@ -109,6 +110,7 @@ public class DrawableManager {
             	Message messagea = handler.obtainMessage(1, d);
                 handler.sendMessage(messagea);
                 Drawable drawable = fetchDrawable(urlString,ctx);
+                
                 Message messageb = handler.obtainMessage(1, drawable);
                 handler.sendMessage(messageb);
             }

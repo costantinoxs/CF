@@ -88,6 +88,7 @@ public class AdvancedSearch extends Fragment {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
+            	System.gc();
             	offset=offset+20;
             	SearchData task = new SearchData();
 				task.execute(etSearch.getText().toString());
