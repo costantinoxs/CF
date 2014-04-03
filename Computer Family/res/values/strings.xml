@@ -6,5 +6,12 @@
     <string name="title_section1">Fantaricerca</string>
     <string name="title_section2">Ricerca Avanzata</string>
     <string name="title_section3">Carrello</string>
+    <string name="tLabelSearch">Ricerca:</string>
+    <string name="tBtnSearch">Cerca</string>
+    <string name="tWarning">Attenzione</string>
+    <string name="tProductNotFound">Prodotto non trovato</string>
+    <string name="tOk">Ok</string>
+    <string name="tCancel">Annulla</string>
+     <string name="tMoreResults">Mostra i prossimi 20</string>
 
 </resources>
